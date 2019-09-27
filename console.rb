@@ -4,6 +4,10 @@ require_relative('models/tickets')
 
 require('pry')
 
+Film.delete_all()
+Customer.delete_all()
+Ticket.delete_all()
+
 customer1 = Customer.new({
   'name' => "David Gordon",
   'funds' => 250
@@ -61,11 +65,12 @@ ticket5 = Ticket.new({
   'film_id' => film2.id
   })
 
-  ticket1.save()
-  ticket2.save()
-  ticket3.save()
-  ticket4.save()
-  ticket5.save()
+ticket2.save()
+ticket3.save()
+ticket4.save()
+ticket5.save()
+
+# ticket1.delete()
 
 binding.pry
 nil
