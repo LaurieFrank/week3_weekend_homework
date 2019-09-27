@@ -37,4 +37,14 @@ class Customer
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM customers"
+    all_customers = SqlRunner.run(sql)
+    return Customer.map_items(all_customers)
+  end
+
+  def self.map_items(customer_hashes)
+    result = customer_hashes.map{ |customer_hash| Customer.new(customer_hash)}
+    return result
+  end
 end

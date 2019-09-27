@@ -37,5 +37,15 @@ class Film
     SqlRunner.run(sql)
   end
 
-  
+  def self.all()
+    sql = "SELECT * FROM films"
+    all_films = SqlRunner.run(sql)
+    return Film.map_items(all_films)
+  end
+
+  def self.map_items(customer_films)
+    result = customer_films.map{ |film_hash| Film.new(film_hash)}
+    return result
+  end
+
 end
