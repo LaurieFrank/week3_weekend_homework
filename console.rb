@@ -15,20 +15,25 @@ customer2 = Customer.new({
   })
 
 customer3 = Customer.new({
-  'name' => 'Fred McNeil'
+  'name' => 'Fred McNeil',
   'funds' => 200
   })
+customer1.save()
+customer2.save()
+customer3.save()
 
 
 film1 = Film.new({
-  'title' => 'The Way'
+  'title' => 'The Way',
   'price' => 12
   })
 
 film2 = Film.new({
-  'title' => 'The Shining'
+  'title' => 'The Shining',
   'price' => 10
   })
+film1.save()
+film2.save()
 
 
 ticket1 = Ticket.new({
@@ -55,3 +60,12 @@ ticket5 = Ticket.new({
   'customer_id' => customer1.id,
   'film_id' => film2.id
   })
+
+  ticket1.save()
+  ticket2.save()
+  ticket3.save()
+  ticket4.save()
+  ticket5.save()
+
+binding.pry
+nil

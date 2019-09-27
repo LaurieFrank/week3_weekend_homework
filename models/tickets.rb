@@ -1,6 +1,6 @@
 require_relative("customers")
 require_relative("films")
-require_relative("..db/sql_runner")
+require_relative("../db/sql_runner")
 
 class Ticket
 
@@ -12,6 +12,11 @@ class Ticket
     @film_id = options['film_id'].to_i
   end
 
-
+  def save()
+    sql = "INSERT INTO tickets (customer_id, film_id) VALUES ($1, $2) RETURNING id"
+    values = [@customer_id, @film_id]
+    film = SqlRunner.run(sql, values)[0];
+    @id = film['id'].to_i
+  end
 
 end
