@@ -1,6 +1,6 @@
-DROP TABLE tickets;
-DROP TABLE customers;
-DROP TABLE films;
+DROP TABLE IF EXISTS tickets;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS films;
 
 CREATE TABLE films(
   id SERIAL8 PRIMARY KEY,
@@ -19,5 +19,3 @@ CREATE TABLE tickets(
   customer_id INT8 REFERENCES customer(id),
   film_id INT8 REFERENCES film(id)
 );
-
-test
