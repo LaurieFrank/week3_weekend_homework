@@ -71,7 +71,16 @@ ticket3.save()
 ticket4.save()
 ticket5.save()
 
+# ticket1.customer
+# film1.title
+# customer1.name
+# customer1.funds
 # ticket1.delete()
+# customer1.update() can't remember how to do this
+
+# customer1.films
+# films.customers #not sure how to return customer name? ticket1.film.name
+doesn't recognise name
 
 binding.pry
 nil
